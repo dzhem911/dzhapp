@@ -4,7 +4,7 @@
     "outDir": "./dist/",
     // Подсвечивает места где не указан тип
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "ESNext",
     // В какую спецификацию компилируем: для поддержки бОльших бразузеров
     "target": "es5",
     "jsx": "react-jsx",
