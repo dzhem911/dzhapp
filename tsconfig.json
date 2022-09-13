@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // то куда собирается сборка. Поскольку собираем все с помощью webpack, это поле здесь не важно
+    "outDir": "./dist/",
+    // Подсвечивает места где не указан тип
+    "noImplicitAny": true,
+    "module": "es6",
+    // В какую спецификацию компилируем: для поддержки бОльших бразузеров
+    "target": "es5",
+    "jsx": "react-jsx",
+    // Компилятор будет обрабатывать не только TS файлы, но и js файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+    // позволяет работать с пакетами, которые используют common js как с обычными
+    // пакетами с помощью import (require() module.export) = common js
+    "esModuleInterop": true,
+    // если какая-либо библиотека не имеет default import,
+    // лоадеры вроде ts-loader или babel-loader автоматически создают их вместо такого импорта import * as React from 'react'
+    // Можно писать import React from 'react', даже если у пакета нет дефолтного импорта
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
