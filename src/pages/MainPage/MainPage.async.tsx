@@ -1,6 +1,6 @@
-// What about default import and tsconfig.json - mode: "ESNext"?
-
 import {lazy} from 'react';
+// components should be default exported!
+
 
 // artificial delay for the sake of example of performance
 export const MainPageAsync = lazy(() => new Promise(resolve => {
