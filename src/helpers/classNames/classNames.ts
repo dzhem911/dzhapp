@@ -1,0 +1,18 @@
+// специальный тайпскриптовый тип Record
+// в качестве ключа используется string, в качестве значения boolean | string
+type Mods = Record<string, boolean | string>
+
+// возвращает строку классов
+// Принимает аргументы: главный класс - cls,
+// объект с модами - объект в котором, в качестве ключей идут названия класса, а как значение - boolean флаг
+// массив дополнительных классов
+export function classNames(cls: string, mods: Mods, additional: string[]): string {
+  return [
+    cls,
+    ...additional,
+    ...Object.entries(mods)
+      .filter(([className, value]) => Boolean(value)) // фильтрую кортежи только со значеним true
+      .map(([className]) => className) // возвращаю имена классов
+  ]
+    .join(' ')
+}
