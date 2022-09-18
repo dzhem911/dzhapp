@@ -28,6 +28,6 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       rules: buildLoaders(options),
     },
     // в поле extensions укзываются расширения файлов для которых при импорте не нужно указывать расширение
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
   }
 }
