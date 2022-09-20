@@ -6,7 +6,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 // Простая функция возвращающая список плагинов
 // webpack.WebpackPluginInstance - специальный тип для плагинов
-export function buildPlugin({paths}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugin({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     // отвечает за генерацию index.html
     // template - используем html файл из папки public как шаблон
@@ -19,5 +19,9 @@ export function buildPlugin({paths}: BuildOptions): webpack.WebpackPluginInstanc
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
+    // с помощью definePlugin в само приложение можно прокидывать глобальные переменные
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    })
   ]
 }
