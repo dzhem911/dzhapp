@@ -1,6 +1,6 @@
 // Помогает импортировать CSS/SASS модули с typescript & react & webpack
 // и помогает с автокомплитом стилей
-declare module '*.sass' {
+declare module '*.scss' {
   interface IClassNames {
     [classname: string]: string
   }
