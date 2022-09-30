@@ -6,6 +6,27 @@ import { BuildOptions } from './types/config';
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   // Порядок при котором лоадеры возвращаются в массиве(use) - имеет значение,
   // поэтому лучше выносить отдельные лоадеры в переменные
+
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['ru', 'en'],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   // Если не использовать typescript - нужен babel-loader
   const typescriptLoader = {
     test: /\.tsx?$/,
@@ -41,7 +62,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             // выбираем способ определения имени
             // https://webpack.js.org/loaders/css-loader/#localidentname
-            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:5]'
+              : '[hash:base64:8]',
           },
         },
       },
@@ -50,6 +73,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   };
 
   return [
+    babelLoader,
     typescriptLoader,
     sassLoader,
     fileLoader,
