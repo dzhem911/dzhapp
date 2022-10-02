@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 // Простая функция возвращающая список плагинов
@@ -24,5 +24,9 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      // overlay: false,
+    }),
   ];
 }
