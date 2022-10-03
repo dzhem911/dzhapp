@@ -7,7 +7,7 @@ import { BuildOptions } from './types/config';
 // Простая функция возвращающая список плагинов
 // webpack.WebpackPluginInstance - специальный тип для плагинов
 export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     // отвечает за генерацию index.html
     // template - используем html файл из папки public как шаблон
     new HtmlWebpackPlugin({
@@ -23,10 +23,15 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
+  ];
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false,
       // overlay: false,
-    }),
-  ];
+    }));
+  }
+
+  return plugins;
 }
