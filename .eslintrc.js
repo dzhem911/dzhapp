@@ -47,6 +47,8 @@ module.exports = {
     // for hooks like useEffect, which help don't miss states in array of dependencies for example
     'react-hooks/rules-of-hooks': 'error', // Checks rules of hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'no-param-reassign': 'off',
+
   },
   globals: {
     __IS_DEV__: true,
