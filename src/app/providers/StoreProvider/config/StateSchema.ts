@@ -4,8 +4,9 @@ import { CounterSchema } from 'entities/counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
-  AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, 
-} from '@reduxjs/toolkit';
+  AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit'; // CombinedState,
+import { CombinedState } from 'redux';
 
 export interface StateSchema {
   counter: CounterSchema;
