@@ -10,7 +10,7 @@
       "*": ["./src/*"]
     },
     "module": "ESNext",
-//    "strict": true,
+    "strict": false,
     // В какую спецификацию компилируем: для поддержки бОльших бразузеров
     "target": "es5",
     "jsx": "react-jsx",
