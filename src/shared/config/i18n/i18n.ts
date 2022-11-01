@@ -9,12 +9,12 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'ru',
+    fallbackLng: 'en',
     // connected via definePlugin(buildPlugin) and declare module(global.d.ts)
     debug: __IS_DEV__,
 
     interpolation: {
-      escapeValue: false,
+      escapeValue: false, // not needed for react as it escapes by default
     },
 
     backend: {

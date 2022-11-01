@@ -8,7 +8,7 @@ import { buildDevServer } from './buildDevServer';
 // Тип webpack.Configuration нужен для того чтобы пользоваться всеми прелестями автокомплита
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
   const {
-    paths, mode, isDev, port,
+    paths, mode, isDev,
   } = options;
 
   return {

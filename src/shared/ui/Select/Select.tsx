@@ -42,9 +42,7 @@ export const Select = memo((props: SelectProps) => {
     </option>
   )), [options]);
 
-  const mods: Mods = {
-    
-  };
+  const mods: Mods = {};
 
   return (
     <div className={classNames(cls.Wrapper, mods, [className])}>

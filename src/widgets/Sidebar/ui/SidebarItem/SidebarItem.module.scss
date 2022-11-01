@@ -4,13 +4,13 @@
   align-items: center;
 }
 
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .link {
   margin-left: 10px;
   opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
 }
 
 .collapsed {

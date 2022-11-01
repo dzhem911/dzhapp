@@ -6,7 +6,9 @@ import { BuildOptions } from './types/config';
 
 // Простая функция возвращающая список плагинов
 // webpack.WebpackPluginInstance - специальный тип для плагинов
-export function buildPlugin({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugin({
+  paths, isDev, apiUrl, project, 
+}: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     // отвечает за генерацию index.html
     // template - используем html файл из папки public как шаблон
@@ -23,6 +25,7 @@ export function buildPlugin({ paths, isDev, apiUrl }: BuildOptions): webpack.Web
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
   ];
 
