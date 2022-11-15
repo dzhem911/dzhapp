@@ -11,6 +11,7 @@ function App() {
   const { theme } = useTheme();
   const dispatch = useDispatch();
   const mounted = useSelector(getUserMounted);
+
   useEffect(() => {
     dispatch(userActions.initAuthData());
   }, [dispatch]);
