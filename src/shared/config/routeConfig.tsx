@@ -16,6 +16,7 @@ export enum AppRoutes {
   Profile = 'profile',
   ARTICLES = 'articles',
   ARTICLES_DETAILS = 'articles_details',
+
   // last
   NOT_FOUND = 'not_found',
 }
@@ -23,9 +24,9 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.Profile]: '/profile',
+  [AppRoutes.Profile]: '/profile/',
   [AppRoutes.ARTICLES]: '/articles',
-  [AppRoutes.ARTICLES_DETAILS]: '/articles/', // Todo add :id.
+  [AppRoutes.ARTICLES_DETAILS]: '/articles/',
   [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -39,7 +40,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     element: <AboutPage />,
   },
   [AppRoutes.Profile]: {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

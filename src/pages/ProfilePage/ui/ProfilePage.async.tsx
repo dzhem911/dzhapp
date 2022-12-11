@@ -5,5 +5,5 @@ import { lazy } from 'react';
 export const ProfilePageAsync = lazy(() => new Promise((resolve) => {
   // suppress error import by ts-ignore
   // @ts-ignore
-  setTimeout(() => resolve(import('./ProfilePage')), 2000);
+  setTimeout(() => resolve(import('./ProfilePage')), 500);
 }));
