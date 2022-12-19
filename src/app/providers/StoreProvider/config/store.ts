@@ -6,6 +6,7 @@ import { To } from 'history';
 import { NavigateOptions } from 'react-router';
 // import { NavigateOptions, To } from 'react-router-dom';
 import { CombinedState, Reducer } from 'redux';
+import { uiReducer } from 'features/scrollSave';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 // ToDo not sure about some imports(To & NavigateOptions)
@@ -18,6 +19,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    saveScroll: uiReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
