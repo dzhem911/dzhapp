@@ -1,6 +1,5 @@
 // Schema for createReduxStore
 
-import { CounterSchema } from 'entities/counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
@@ -16,7 +15,6 @@ import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaveSchema } from 'features/scrollSave';
 
 export interface StateSchema {
-  counter: CounterSchema;
   user: UserSchema;
   saveScroll: ScrollSaveSchema;
 
