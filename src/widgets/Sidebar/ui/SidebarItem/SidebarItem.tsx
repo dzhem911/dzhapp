@@ -1,12 +1,11 @@
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
+import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {

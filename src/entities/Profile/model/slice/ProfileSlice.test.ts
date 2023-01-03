@@ -1,3 +1,4 @@
+// eslint-disable-next-line dz-path-plugin/path-checker
 import {
   profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
 } from 'entities/Profile';

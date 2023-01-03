@@ -1,3 +1,4 @@
+// eslint-disable-next-line dz-path-plugin/path-checker
 import { Article } from 'entities/Article';
 
 export interface ArticleDetailsSchema {

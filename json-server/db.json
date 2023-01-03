@@ -595,6 +595,12 @@
       "userId": "1",
       "text": "python!!!",
       "id": "p5rMadd"
+    },
+    {
+      "articleId": "7",
+      "userId": 1,
+      "text": "qweqwe",
+      "id": "-LcmfL1"
     }
   ],
   "users": [
@@ -619,7 +625,7 @@
       "first": "Dzhemal",
       "lastname": "Chkhubianishvili",
       "age": 31,
-      "currency": "USD",
+      "currency": "EUR",
       "country": "Georgia",
       "city": "Tbilisi",
       "username": "dzhem911",

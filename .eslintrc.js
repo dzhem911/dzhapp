@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'dz-path-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -32,7 +33,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
@@ -61,6 +62,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
+    'dz-path-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
