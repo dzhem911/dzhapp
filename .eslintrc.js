@@ -52,6 +52,7 @@ module.exports = {
           'direction',
           'gap',
           'align',
+          'role',
         ],
       },
     ],
